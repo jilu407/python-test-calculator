@@ -8,6 +8,5 @@ WORKDIR /python-test-calculator
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN ["pytest", "-v", "--junitxml=reports/result.xml" || "[[ $? -eq 1 ]]"]
-
+RUN pytest  -v  --junitxml=reports/result.xml  || [[ $? -eq 1 ]]
 CMD tail -f /dev/null
